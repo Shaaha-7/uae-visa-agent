@@ -1,77 +1,87 @@
-# UAE Visa Intel Client
+# 🇦🇪 UAE Visa & Government Intelligence AI Voice Agent
 
-A Python client for pulling live UAE government visa information (visa types,
-requirements, fees, FAQs) via context.dev, scoped to official government
-domains only (u.ae, icp.gov.ae, gdrfad.gov.ae, mofa.gov.ae).
+Welcome! This is an intelligent, voice-powered AI assistant created to help anyone ask questions about **UAE Visas, Emirates ID, Overstay Fines, Work Permits, and Government Rules** — and get official, verified answers spoken back to them in natural, friendly voice in their own language (English, Arabic, Hindi, Urdu, etc.).
 
-## Setup
+---
 
-1. Install dependencies:
-   ```bash
-   pip install -r requirements.txt
-   ```
+## 💡 What Does This Project Do? (In Simple Words)
 
-2. Add your context.dev API key:
-   ```bash
-   cp .env.example .env
-   ```
-   Then open `.env` and paste your real key in place of `your_key_here`.
+Imagine having a friendly UAE government expert on the phone who:
+- 🗣️ **Listens** when you speak your question in English, Arabic, Hindi, or any language.
+- 🔍 **Checks** official UAE government portals (`u.ae`, `icp.gov.ae`, `gdrfad.gov.ae`) for the exact official rules.
+- 🧠 **Translates & Summarizes** complex laws into 2 or 3 short, easy sentences.
+- 🔊 **Speaks back to you** clearly in human voice!
 
-3. Run:
-   ```bash
-   python main.py
-   ```
+No more reading through endless 20-page PDF legal guides or getting lost on confusing government websites.
 
-## Structure
+---
 
+## 🌟 Key Features
+
+1. **Official Government Information**:
+   - **Golden Visa**: Requirements for real estate investors (AED 2M), entrepreneurs, scientists, doctors, and students.
+   - **Emirates ID**: Who needs it, step-by-step application steps, fees (AED 100/yr), and late renewal fines (AED 20/day).
+   - **Overstay Fines**: Daily fine amounts (AED 50–100/day), grace periods, and re-entry ban rules.
+   - **Family Sponsorship**: Minimum salary requirements (AED 4,000/month), required documents for spouse, kids, and parents.
+   - **Other Visas**: Tourist, Green, Student, Retirement, Work, Transit, and Domestic Worker visas.
+   - **General UAE Laws**: Labour law rules, gratuity calculations, free zone setup costs, driving licence conversion, and medical test steps.
+
+2. **Multilingual Voice Support**:
+   - Understands questions spoken in English, Arabic, Hindi, Urdu, French, Russian, etc.
+   - Automatically detects your language and replies in that **exact same language**!
+
+3. **Fast & Reliability Protection**:
+   - Stores pre-verified official facts in a local cache so you get answers instantly without waiting.
+   - If a new question is asked, it queries official UAE government portals via `context.dev`.
+
+---
+
+## 🚀 How to Run This Project (Step-by-Step for Beginners)
+
+### Step 1: Install Python
+Make sure you have **Python** installed on your computer. (Version 3.10 or newer).
+
+### Step 2: Download or Clone this Repository
+Open PowerShell or Terminal and run:
+```bash
+git clone https://github.com/Shaaha-7/uae-visa-agent.git
+cd uae-visa-agent/uae-visa-agent
 ```
-uae-visa-agent/
-├── .env.example          # copy to .env and add your key
-├── requirements.txt
-├── main.py                # entry point — runs sample queries
-└── gov_intel/
-    ├── __init__.py
-    └── uae_visa_client.py # UAEVisaIntelClient — the actual context.dev integration
+
+### Step 3: Install Required Dependencies
+Run this single command:
+```bash
+pip install -r requirements.txt
 ```
 
-## What it does
+### Step 4: Add Your API Keys
+Create a file named `.env` in the project folder with your keys:
+```env
+CONTEXT_DEV_API_KEY=your_context_dev_key
+ELEVENLABS_API_KEY=your_elevenlabs_key
+ELEVENLABS_VOICE_ID=21m00Tcm4TlvDq8ikWAM
+GROQ_API_KEY=your_groq_key
+```
 
-`UAEVisaIntelClient` wraps context.dev's `/web/extract` endpoint, restricted
-to four official UAE government sources:
+### Step 5: Start the Voice Webhook Server
+Run the server:
+```bash
+python server.py
+```
+Your server is now live and listening for questions! 🎉
 
-- `u.ae` — federal information portal
-- `icp.gov.ae` — Identity, Citizenship, Customs & Port Security Authority
-- `gdrfad.gov.ae` — Dubai's residency & foreigners affairs authority
-- `mofa.gov.ae` — Ministry of Foreign Affairs
+---
 
-Four methods are exposed:
+## 📚 Technical Overview & Architecture
 
-| Method | Returns |
-|---|---|
-| `get_visa_types_overview()` | List of visa types from the federal portal |
-| `get_visa_requirements(visa_type)` | Eligibility, documents, validity for a given visa |
-| `get_visa_faqs(topic)` | Official Q&A content for a topic |
-| `get_visa_fees(visa_type)` | Fee amounts in AED, with source section noted |
+For software developers, engineers, or technical users interested in the full system design, API contracts, caching algorithms, context.dev web extraction schemas, and Groq LLM pipelines:
 
-Responses are cached in-memory for 24 hours (visa rules don't change hourly),
-and every extraction call passes explicit instructions telling context.dev
-not to infer or estimate missing fields — important for anything fee- or
-eligibility-related.
+👉 **Please refer to [TECH_SPEC.md](file:///c:/Users/newadmin/Downloads/uae-visa-agent/uae-visa-agent/TECH_SPEC.md)** for complete technical documentation.
 
-## Important
+---
 
-- Always surface the source URL next to any answer built from this client —
-  don't present it as flat fact.
-- If `ContextDevError` is raised, don't fall back to guessed/training-data
-  info. Tell the user to check u.ae or ICP directly.
-- Confirm exact endpoint paths/payload shape against current context.dev
-  docs (https://context.dev/docs) — this follows the `/web/extract` naming
-  from the hackathon brief, but exact field names may differ.
-
-## Note on "Antigravity"
-
-This is a plain Python project (stdlib + `requests` + `python-dotenv`), so it
-should run in any environment that can execute `python main.py`, including
-Google's Antigravity IDE. If Antigravity expects a specific manifest or
-task-definition format instead of a plain script, let me know and I'll
-restructure the entry point accordingly.
+## 📄 License & Attribution
+Data sourced from official UAE government portals:
+- [U.AE (Official UAE Portal)](https://u.ae)
+- [ICP (Federal Authority for Identity & Citizenship)](https://icp.gov.ae)
+- [GDRFA Dubai](https://gdrfad.gov.ae)
