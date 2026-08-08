@@ -1,87 +1,66 @@
 # 🇦🇪 UAE Visa & Government Intelligence AI Voice Agent
 
-Welcome! This is an intelligent, voice-powered AI assistant created to help anyone ask questions about **UAE Visas, Emirates ID, Overstay Fines, Work Permits, and Government Rules** — and get official, verified answers spoken back to them in natural, friendly voice in their own language (English, Arabic, Hindi, Urdu, etc.).
+An intelligent, voice-powered AI assistant that allows anyone to ask questions about **UAE Visas, Emirates ID, Overstay Fines, Work Permits, and Government Laws** in natural speech (English, Arabic, Hindi, Urdu, etc.) and receive instant, verified answers spoken back in human voice.
 
 ---
 
-## 💡 What Does This Project Do? (In Simple Words)
+## 🛠️ Setup & Working Instructions
 
-Imagine having a friendly UAE government expert on the phone who:
-- 🗣️ **Listens** when you speak your question in English, Arabic, Hindi, or any language.
-- 🔍 **Checks** official UAE government portals (`u.ae`, `icp.gov.ae`, `gdrfad.gov.ae`) for the exact official rules.
-- 🧠 **Translates & Summarizes** complex laws into 2 or 3 short, easy sentences.
-- 🔊 **Speaks back to you** clearly in human voice!
+### Prerequisites
+- Python 3.10 or higher installed.
 
-No more reading through endless 20-page PDF legal guides or getting lost on confusing government websites.
-
----
-
-## 🌟 Key Features
-
-1. **Official Government Information**:
-   - **Golden Visa**: Requirements for real estate investors (AED 2M), entrepreneurs, scientists, doctors, and students.
-   - **Emirates ID**: Who needs it, step-by-step application steps, fees (AED 100/yr), and late renewal fines (AED 20/day).
-   - **Overstay Fines**: Daily fine amounts (AED 50–100/day), grace periods, and re-entry ban rules.
-   - **Family Sponsorship**: Minimum salary requirements (AED 4,000/month), required documents for spouse, kids, and parents.
-   - **Other Visas**: Tourist, Green, Student, Retirement, Work, Transit, and Domestic Worker visas.
-   - **General UAE Laws**: Labour law rules, gratuity calculations, free zone setup costs, driving licence conversion, and medical test steps.
-
-2. **Multilingual Voice Support**:
-   - Understands questions spoken in English, Arabic, Hindi, Urdu, French, Russian, etc.
-   - Automatically detects your language and replies in that **exact same language**!
-
-3. **Fast & Reliability Protection**:
-   - Stores pre-verified official facts in a local cache so you get answers instantly without waiting.
-   - If a new question is asked, it queries official UAE government portals via `context.dev`.
-
----
-
-## 🚀 How to Run This Project (Step-by-Step for Beginners)
-
-### Step 1: Install Python
-Make sure you have **Python** installed on your computer. (Version 3.10 or newer).
-
-### Step 2: Download or Clone this Repository
-Open PowerShell or Terminal and run:
+### 1. Installation
+Clone the repository and install all dependencies:
 ```bash
 git clone https://github.com/Shaaha-7/uae-visa-agent.git
 cd uae-visa-agent/uae-visa-agent
-```
-
-### Step 3: Install Required Dependencies
-Run this single command:
-```bash
 pip install -r requirements.txt
 ```
 
-### Step 4: Add Your API Keys
-Create a file named `.env` in the project folder with your keys:
+### 2. Environment Variables Configuration
+Create a `.env` file in the project root folder (`uae-visa-agent/uae-visa-agent/.env`) with the following keys:
 ```env
-CONTEXT_DEV_API_KEY=your_context_dev_key
-ELEVENLABS_API_KEY=your_elevenlabs_key
+CONTEXT_DEV_API_KEY=your_context_dev_api_key
+ELEVENLABS_API_KEY=your_elevenlabs_api_key
 ELEVENLABS_VOICE_ID=21m00Tcm4TlvDq8ikWAM
-GROQ_API_KEY=your_groq_key
+GROQ_API_KEY=your_groq_api_key
 ```
 
-### Step 5: Start the Voice Webhook Server
-Run the server:
+### 3. Run Command
+Start the live webhook server:
 ```bash
 python server.py
 ```
-Your server is now live and listening for questions! 🎉
+*The server will start on `http://localhost:5000` (expose port 5000 via ngrok or Cloudflare Tunnels for ElevenLabs Webhook integration).*
 
 ---
 
-## 📚 Technical Overview & Architecture
+## 🏗️ Architecture Overview
 
-For software developers, engineers, or technical users interested in the full system design, API contracts, caching algorithms, context.dev web extraction schemas, and Groq LLM pipelines:
-
-👉 **Please refer to [TECH_SPEC.md](file:///c:/Users/newadmin/Downloads/uae-visa-agent/uae-visa-agent/TECH_SPEC.md)** for complete technical documentation.
+```
+[ User / ElevenLabs Voice Agent ] 
+            │ (Webhook POST /api/visa-intel)
+            ▼
+     [ Flask Webhook Server ] (server.py)
+            │
+            ▼
+  [ Smart Router & Client ] (gov_intel/uae_visa_client.py)
+   ├── 1. Disk Cache Lookup (visa_cache.json) -> Instant verification
+   └── 2. Live Extractor (context.dev API) -> Scraping official u.ae/icp portals
+            │
+            ▼
+ [ Groq LLM Voice Summarizer ] (gov_intel/llm_summarizer.py)
+   ├── 1. Language Detector (Llama-3.3 70B)
+   └── 2. Conversational Speech Script Generator
+            │
+            ▼
+[ ElevenLabs Multilingual TTS ] -> Speaks back to user in their native language
+```
 
 ---
 
-## 📄 License & Attribution
-Data sourced from official UAE government portals:
-- [U.AE (Official UAE Portal)](https://u.ae)
-- [ICP (Federal Authority for Identity & Citizenship)](https://icp.gov.ae)
-- [GDRFA Dubai](https://gdrfad.gov.ae)
+## 💡 What It Does
+
+1. **Voice-in / Voice-out Multilingual Interface**: Listens to user questions in English, Arabic, Hindi, Urdu, or French, and responds aloud in the user's native language using ElevenLabs TTS.
+2. **Verified Live UAE Government Data**: Queries official government portals (`u.ae`, `icp.gov.ae`, `gdrfad.gov.ae`) via `context.dev` web extraction to ensure accurate, non-hallucinated visa rules, eligibility thresholds, and fee structures.
+3. **Resilient Fallback Cache**: Maintains an updated, pre-compiled persistent disk cache (`visa_cache.json`) covering 21+ major UAE government categories (Golden Visa, Overstay Fines, Emirates ID, Family Sponsorship, Labour Law, etc.) to guarantee 100% uptime even if API credits are depleted.
