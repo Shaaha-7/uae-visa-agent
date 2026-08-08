@@ -1,0 +1,32 @@
+# Environment & Secrets
+.env
+.env.local
+*.env
+
+# Python Bytecode & Cache
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+
+# Generated Audio Output Files
+*.mp3
+*.wav
+golden_visa_voice.mp3
+response_speech.mp3
+visa_answer.mp3
+user_question.wav
+user_voice_input.wav
+turn_*_answer.mp3
+test_shaaha.mp3
+
+# Virtual Environments
+venv/
+env/
+.venv/
+
+# IDE & System Files
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
