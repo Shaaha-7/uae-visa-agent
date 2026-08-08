@@ -22,6 +22,12 @@ UAE_OFFICIAL_SOURCES = {
     "icp": "https://icp.gov.ae/en/",  # Federal Authority for Identity, Citizenship, Customs & Port Security
     "gdrfa_dubai": "https://www.gdrfad.gov.ae/en",  # Dubai residency/visa authority
     "mofa": "https://www.mofa.gov.ae/en/",
+    "emirates_id": "https://u.ae/en/information-and-services/visa-and-emirates-id/emirates-id",
+    "overstay": "https://u.ae/en/information-and-services/visa-and-emirates-id/overstaying-your-visa",
+    "family_sponsorship": "https://u.ae/en/information-and-services/visa-and-emirates-id/Types-of-visas/residence-visa-for-family-members",
+    "green_visa": "https://u.ae/en/information-and-services/visa-and-emirates-id/Types-of-visas/the-green-visa",
+    "work_visa": "https://u.ae/en/information-and-services/visa-and-emirates-id/Types-of-visas/residence-visa-for-working-in-the-uae",
+    "retirement_visa": "https://u.ae/en/information-and-services/visa-and-emirates-id/Types-of-visas/retirement-visa",
 }
 
 
@@ -84,13 +90,28 @@ class UAEVisaIntelClient:
         if entry:
             return entry.data
         for k, e in self._cache.items():
-            if "tourist" in key and "tourist" in k:
+            # Nationality exact-prefix match
+            if key.startswith("nationality:") and k == key:
+                return e.data
+            if "fines" in key and "fines" in k:
+                return e.data
+            if "fine" in key and "fines" in k:
+                return e.data
+            if "overstay" in key and "fines" in k:
+                return e.data
+            if "ban" in key and "fines" in k:
+                return e.data
+            if "penalty" in key and "fines" in k:
+                return e.data
+            if "employer" in key and "fines" in k:
+                return e.data
+            if "tourist" in key and "tourist" in k and "fines" not in key:
                 return e.data
             if "golden" in key and "golden" in k:
                 return e.data
             if "studying" in key and "studying" in k:
                 return e.data
-            if "visit" in key and "tourist" in k:
+            if "visit" in key and "tourist" in k and "fines" not in key:
                 return e.data
         return None
 
@@ -332,20 +353,90 @@ class UAEVisaIntelClient:
             "student": "https://u.ae/en/information-and-services/visa-and-emirates-id/Types-of-visas/residence-visa-for-studying-in-the-uae",
             "work": "https://u.ae/en/information-and-services/visa-and-emirates-id/Types-of-visas/residence-visa-for-working-in-the-uae",
             "green": "https://u.ae/en/information-and-services/visa-and-emirates-id/Types-of-visas/the-green-visa",
+            "emirates_id": "https://u.ae/en/information-and-services/visa-and-emirates-id/emirates-id",
+            "overstay": "https://u.ae/en/information-and-services/visa-and-emirates-id/overstaying-your-visa",
+            "fines_complete": "uae-fines-complete",
+            "family": "https://u.ae/en/information-and-services/visa-and-emirates-id/Types-of-visas/residence-visa-for-family-members",
+            "retirement": "https://u.ae/en/information-and-services/visa-and-emirates-id/Types-of-visas/retirement-visa",
+            "nationality": "https://u.ae/en/information-and-services/visa-and-emirates-id/do-you-need-a-uae-visa",
             "federal_portal": "https://u.ae/en/information-and-services/visa-and-emirates-id"
         }
 
+        # Nationality keyword map — detects country names in user question
+        NATIONALITY_KEYWORDS = {
+            "indian": "Indian", "india": "Indian",
+            "pakistani": "Pakistani", "pakistan": "Pakistani",
+            "filipino": "Filipino", "philippines": "Filipino",
+            "bangladeshi": "Bangladeshi", "bangladesh": "Bangladeshi",
+            "nepali": "Nepali", "nepal": "Nepali",
+            "sri lankan": "Sri Lankan", "sri lanka": "Sri Lankan",
+            "british": "British", "uk": "British", "united kingdom": "British",
+            "american": "American", "us": "American", "united states": "American",
+            "canadian": "Canadian", "canada": "Canadian",
+            "australian": "Australian", "australia": "Australian",
+            "chinese": "Chinese", "china": "Chinese",
+            "russian": "Russian", "russia": "Russian",
+            "egyptian": "Egyptian", "egypt": "Egyptian",
+            "jordanian": "Jordanian", "jordan": "Jordanian",
+            "lebanese": "Lebanese", "lebanon": "Lebanese",
+            "nigerian": "Nigerian", "nigeria": "Nigerian",
+            "kenyan": "Kenyan", "kenya": "Kenyan",
+            "french": "French", "france": "French",
+            "german": "German", "germany": "German",
+            "iranian": "Iranian", "iran": "Iranian",
+            "turkish": "Turkish", "turkey": "Turkish",
+            "ethiopian": "Ethiopian", "ethiopia": "Ethiopian",
+            "saudi": "Saudi Arabian", "saudi arabia": "Saudi Arabian",
+            "emirati": "Emirati", "uae national": "Emirati",
+        }
+
+        detected_nationality = None
+        for kw, nat in NATIONALITY_KEYWORDS.items():
+            if kw in q_lower:
+                detected_nationality = nat
+                break
+
         if target_url is None:
-            if "indian" in q_lower or "on arrival" in q_lower or "passport" in q_lower:
+            # 1. Nationality-specific question — live extraction from context.dev
+            if detected_nationality and target_url is None:
+                print(f"  [NATIONALITY] Detected nationality: {detected_nationality} — fetching live from context.dev")
+                return self.get_nationality_visa_info(detected_nationality, query)
+
+            # 2. Emirates ID
+            elif "emirates id" in q_lower or "eid" in q_lower or "identity card" in q_lower or "id card" in q_lower:
+                target_url = DYNAMIC_URL_MAP["emirates_id"]
+            # 3. Fines / violations / bans
+            elif (
+                "fine" in q_lower or "penalty" in q_lower or "ban" in q_lower
+                or "violation" in q_lower or "illegal" in q_lower or "absconding" in q_lower
+                or "cancel visa" in q_lower or "employer" in q_lower or "without permit" in q_lower
+            ):
+                target_url = DYNAMIC_URL_MAP["fines_complete"]
+            # 4. Overstay / expiry
+            elif "overstay" in q_lower or "expire" in q_lower:
+                target_url = DYNAMIC_URL_MAP["overstay"]
+            # 5. Family sponsorship
+            elif "family" in q_lower or "spouse" in q_lower or "wife" in q_lower or "husband" in q_lower or "dependent" in q_lower or "child" in q_lower:
+                target_url = DYNAMIC_URL_MAP["family"]
+            # 6. Retirement visa
+            elif "retirement" in q_lower or "retire" in q_lower:
+                target_url = DYNAMIC_URL_MAP["retirement"]
+            # 7. Visa on arrival / airport
+            elif "on arrival" in q_lower or "airport" in q_lower:
                 target_url = DYNAMIC_URL_MAP["visit_on_arrival"]
+            # 8. Tourist / visit
             elif "tourist" in q_lower or "visit" in q_lower:
                 target_url = DYNAMIC_URL_MAP["tourist"]
+            # 9. Golden Visa
             elif "golden" in q_lower:
                 target_url = DYNAMIC_URL_MAP["golden"]
-            elif "student" in q_lower:
+            # 10. Student / study
+            elif "student" in q_lower or "study" in q_lower or "university" in q_lower:
                 target_url = DYNAMIC_URL_MAP["student"]
-            elif "work" in q_lower:
+            # 11. Work / employment
+            elif "work" in q_lower or "job" in q_lower or "employment" in q_lower or "labour" in q_lower or "labor" in q_lower:
                 target_url = DYNAMIC_URL_MAP["work"]
+            # 12. Green Visa
             elif "green" in q_lower:
                 target_url = DYNAMIC_URL_MAP["green"]
             else:
@@ -377,3 +468,229 @@ class UAEVisaIntelClient:
         )
 
         return self.extract_visa_page(url=target_url, instructions=instructions, schema=schema)
+
+    def get_nationality_visa_info(self, nationality: str, user_question: str = "") -> dict:
+        """
+        Live context.dev extraction: fetches UAE visa eligibility, entry rules,
+        and requirements specifically for a given nationality from official UAE portals.
+        Results are cached by nationality to avoid duplicate API calls.
+        """
+        cache_key = f"nationality:{nationality.lower()}"
+        cached = self._get_cached(cache_key)
+        if cached:
+            print(f"  [NATIONALITY CACHE] Serving cached data for {nationality}")
+            return cached
+
+        schema = {
+            "type": "object",
+            "properties": {
+                "nationality": {"type": "string"},
+                "visa_requirement": {"type": "string"},
+                "visa_on_arrival_eligible": {"type": "string"},
+                "visa_free_duration": {"type": "string"},
+                "tourist_visa_options": {
+                    "type": "array",
+                    "items": {"type": "string"}
+                },
+                "how_to_apply": {"type": "string"},
+                "required_documents": {
+                    "type": "array",
+                    "items": {"type": "string"}
+                },
+                "fees_or_validity": {"type": "string"},
+                "special_notes": {"type": "string"}
+            },
+            "required": ["nationality", "visa_requirement"]
+        }
+
+        instructions = (
+            f"Extract UAE entry and visa rules specifically for {nationality} passport holders. "
+            f"Include: (1) whether they need a pre-arranged visa or get visa on arrival or visa-free entry, "
+            f"(2) duration of stay allowed, (3) how to apply for a UAE tourist or visit visa if required, "
+            f"(4) required documents, (5) any special conditions (e.g. Indian citizens with US/UK visa get visa on arrival). "
+            f"User's original question: '{user_question}'. "
+            f"Be precise and only state what is officially confirmed on this page."
+        )
+
+        # Try the dedicated nationality visa check page first, then fallback to tourist visa page
+        urls_to_try = [
+            "https://u.ae/en/information-and-services/visa-and-emirates-id/do-you-need-a-uae-visa",
+            "https://u.ae/en/information-and-services/visa-and-emirates-id/Types-of-visas/tourist-visa",
+            "https://icp.gov.ae/en/",
+        ]
+
+        for url in urls_to_try:
+            try:
+                result = self.extract_visa_page(
+                    url=url,
+                    instructions=instructions,
+                    schema=schema,
+                    use_cache=False  # always fresh for nationality queries
+                )
+                # Cache by nationality key for this session
+                self._set_cached(cache_key, result)
+                return result
+            except ContextDevError as e:
+                print(f"  [NATIONALITY] Failed on {url}: {e} — trying next URL")
+                continue
+
+        # If all URLs fail, return a helpful fallback
+        return {
+            "data": {
+                "nationality": nationality,
+                "visa_requirement": f"Please check the official UAE government portal at u.ae or contact the nearest UAE embassy for the most up-to-date visa requirements for {nationality} passport holders.",
+                "how_to_apply": "Visit https://u.ae/en/information-and-services/visa-and-emirates-id for official information."
+            }
+        }
+
+    # ─────────────────────────────────────────────────────────────
+    # DEDICATED TOPIC EXTRACTORS
+    # ─────────────────────────────────────────────────────────────
+
+    def get_emirates_id_info(self) -> dict:
+        """
+        Extracts Emirates ID application process, renewal, fees, required documents,
+        and validity from official UAE government sources.
+        """
+        schema = {
+            "type": "object",
+            "properties": {
+                "topic": {"type": "string"},
+                "what_is_emirates_id": {"type": "string"},
+                "who_needs_it": {"type": "string"},
+                "required_documents": {"type": "array", "items": {"type": "string"}},
+                "application_steps": {"type": "array", "items": {"type": "string"}},
+                "validity": {"type": "string"},
+                "fees_aed": {"type": "string"},
+                "renewal_process": {"type": "string"},
+                "where_to_apply": {"type": "string"}
+            },
+            "required": ["topic"]
+        }
+        return self.extract_visa_page(
+            url=UAE_OFFICIAL_SOURCES["emirates_id"],
+            instructions=(
+                "Extract everything about the Emirates ID: what it is, who needs it (citizens, residents, GCC nationals), "
+                "required documents, how to apply, fees in AED, validity period, renewal process, and where to apply "
+                "(ICP service centres, typing centres, online portal). Be thorough and precise."
+            ),
+            schema=schema,
+        )
+
+    def get_overstay_fines_info(self) -> dict:
+        """
+        Extracts UAE overstay fines, grace period, and how to regularize visa status.
+        """
+        schema = {
+            "type": "object",
+            "properties": {
+                "topic": {"type": "string"},
+                "grace_period": {"type": "string"},
+                "daily_fine_aed": {"type": "string"},
+                "how_to_pay": {"type": "array", "items": {"type": "string"}},
+                "how_to_regularize": {"type": "array", "items": {"type": "string"}},
+                "consequences": {"type": "string"},
+                "amnesty_info": {"type": "string"}
+            },
+            "required": ["topic"]
+        }
+        return self.extract_visa_page(
+            url=UAE_OFFICIAL_SOURCES["overstay"],
+            instructions=(
+                "Extract the official UAE policy on overstaying a visa: the grace period after visa expiry, "
+                "the daily fine amount in AED, how and where to pay fines (ICP, GDRFA), how to regularize "
+                "your status (exit the country, apply for extension), and any consequences such as bans. "
+                "If there is any amnesty programme mentioned, include it."
+            ),
+            schema=schema,
+        )
+
+    def get_family_sponsorship_info(self) -> dict:
+        """
+        Extracts family sponsorship visa rules: who can sponsor, documents, salary threshold, fees.
+        """
+        schema = {
+            "type": "object",
+            "properties": {
+                "topic": {"type": "string"},
+                "who_can_sponsor": {"type": "string"},
+                "minimum_salary_aed": {"type": "string"},
+                "eligible_family_members": {"type": "array", "items": {"type": "string"}},
+                "required_documents": {"type": "array", "items": {"type": "string"}},
+                "application_steps": {"type": "array", "items": {"type": "string"}},
+                "validity": {"type": "string"},
+                "fees_aed": {"type": "string"}
+            },
+            "required": ["topic"]
+        }
+        return self.extract_visa_page(
+            url=UAE_OFFICIAL_SOURCES["family_sponsorship"],
+            instructions=(
+                "Extract the rules for sponsoring family members for UAE residency: who is eligible to sponsor "
+                "(e.g. UAE residents, citizens), minimum monthly salary requirement in AED, which family members "
+                "can be sponsored (spouse, children, parents), required documents, application steps via ICP or GDRFA, "
+                "visa validity period, and fees in AED."
+            ),
+            schema=schema,
+        )
+
+    def get_green_visa_info(self) -> dict:
+        """
+        Extracts UAE Green Visa details: eligibility, categories, fees, validity.
+        """
+        schema = {
+            "type": "object",
+            "properties": {
+                "topic": {"type": "string"},
+                "what_is_green_visa": {"type": "string"},
+                "eligibility_categories": {
+                    "type": "array",
+                    "items": {
+                        "type": "object",
+                        "properties": {
+                            "category": {"type": "string"},
+                            "requirements": {"type": "string"}
+                        }
+                    }
+                },
+                "key_benefits": {"type": "array", "items": {"type": "string"}},
+                "validity": {"type": "string"},
+                "how_to_apply": {"type": "string"}
+            },
+            "required": ["topic"]
+        }
+        return self.extract_visa_page(
+            url=UAE_OFFICIAL_SOURCES["green_visa"],
+            instructions=(
+                "Extract the UAE Green Visa details: what it is, who qualifies (freelancers, skilled workers, "
+                "investors, outstanding students), key benefits compared to regular residency (no sponsor needed, "
+                "self-sponsorship, 5-year validity), how to apply, and any salary or qualification thresholds."
+            ),
+            schema=schema,
+        )
+
+    def get_retirement_visa_info(self) -> dict:
+        """
+        Extracts UAE retirement visa eligibility, financial requirements, and validity.
+        """
+        schema = {
+            "type": "object",
+            "properties": {
+                "topic": {"type": "string"},
+                "minimum_age": {"type": "string"},
+                "financial_requirements": {"type": "array", "items": {"type": "string"}},
+                "required_documents": {"type": "array", "items": {"type": "string"}},
+                "validity": {"type": "string"},
+                "how_to_apply": {"type": "string"}
+            },
+            "required": ["topic"]
+        }
+        return self.extract_visa_page(
+            url=UAE_OFFICIAL_SOURCES["retirement_visa"],
+            instructions=(
+                "Extract UAE retirement visa details: minimum age requirement (55 years), financial thresholds "
+                "(property value, savings amount, or monthly income in AED), required documents, "
+                "visa validity period (5 years renewable), and how to apply via ICP or GDRFA."
+            ),
+            schema=schema,
+        )

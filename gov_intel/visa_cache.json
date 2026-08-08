@@ -1,6 +1,5 @@
 {
   "extract:https://u.ae/en/information-and-services/visa-and-emirates-id/Types-of-visas/golden-visa": {
-    "fetched_at": 1723100000,
     "data": {
       "status": "ok",
       "url": "https://u.ae/en/information-and-services/visa-and-emirates-id/Types-of-visas/golden-visa",
@@ -40,10 +39,10 @@
         ],
         "fees_or_validity": "5 or 10 years depending on category"
       }
-    }
+    },
+    "fetched_at": 1723100000
   },
   "extract:https://u.ae/en/information-and-services/visa-and-emirates-id/Types-of-visas/tourist-visa": {
-    "fetched_at": 1723100000,
     "data": {
       "status": "ok",
       "url": "https://u.ae/en/information-and-services/visa-and-emirates-id/Types-of-visas/tourist-visa",
@@ -62,10 +61,10 @@
         ],
         "fees_or_validity": "5-year multiple entry visa (90 days per visit) or 30/60-day single/multiple entry tourist visa"
       }
-    }
+    },
+    "fetched_at": 1723100000
   },
   "extract:https://u.ae/en/information-and-services/visa-and-emirates-id/Types-of-visas/residence-visa-for-studying-in-the-uae": {
-    "fetched_at": 1723100000,
     "data": {
       "status": "ok",
       "url": "https://u.ae/en/information-and-services/visa-and-emirates-id/Types-of-visas/residence-visa-for-studying-in-the-uae",
@@ -84,6 +83,758 @@
         ],
         "processing_time": "Varies by institution; typically processed within 2 to 4 weeks upon submission of all required documents."
       }
-    }
+    },
+    "fetched_at": 1723100000
+  },
+  "extract:https://u.ae/en/information-and-services/visa-and-emirates-id/emirates-id": {
+    "data": {
+      "status": "ok",
+      "url": "https://u.ae/en/information-and-services/visa-and-emirates-id/emirates-id",
+      "data": {
+        "topic": "Emirates ID",
+        "what_is_emirates_id": "The Emirates ID is a mandatory national identity card issued to all UAE citizens, GCC nationals, and residents. It serves as the official proof of identity inside the UAE and is required for accessing government and private services.",
+        "who_needs_it": "All UAE citizens, GCC nationals residing in the UAE, and all registered residents (expats with a valid residency visa) are required to have an Emirates ID.",
+        "required_documents": [
+          "Original passport with valid UAE residency visa (for residents)",
+          "Original passport only (for citizens and GCC nationals)",
+          "Completed application form (through ICP smart services portal or typing centre)",
+          "Recent personal photograph (biometric photo taken at ICP centre)",
+          "Payment of applicable fees"
+        ],
+        "application_steps": [
+          "Apply online via the ICP Smart Services portal (smartservices.icp.gov.ae) or visit an ICP service centre or authorised typing centre",
+          "Submit required documents and biometric data (fingerprints and photo taken at ICP centre)",
+          "Pay applicable fees",
+          "Receive Emirates ID by post or collect from ICP service centre within 3-5 working days"
+        ],
+        "validity": "Emirates ID validity is tied to the residence visa validity for expats. For UAE citizens it is valid for 5 or 10 years.",
+        "fees_aed": "AED 100 per year of validity. For example, a 2-year Emirates ID costs AED 200. An additional typing centre fee of AED 30-70 may apply.",
+        "renewal_process": "Renewal must be completed before the Emirates ID expires. Renew online via ICP Smart Services portal, ICP service centres, authorised typing centres, or GDRFA Dubai app. A fine of AED 20 per day applies for delays after the ID expires, up to a maximum of AED 1,000.",
+        "where_to_apply": "ICP Smart Services online portal (smartservices.icp.gov.ae), ICP Customer Happiness Centres across all emirates, authorised typing offices, GDRFA Dubai app (for Dubai residents), or Amer centres in Dubai."
+      }
+    },
+    "fetched_at": 1723100000
+  },
+  "extract:https://u.ae/en/information-and-services/visa-and-emirates-id/overstaying-your-visa": {
+    "data": {
+      "status": "ok",
+      "url": "https://u.ae/en/information-and-services/visa-and-emirates-id/overstaying-your-visa",
+      "data": {
+        "topic": "Overstaying a UAE Visa",
+        "grace_period": "A grace period of 10 days is typically granted after a visa expires before fines begin. However, this may vary depending on visa type and emirate.",
+        "daily_fine_aed": "AED 50 per day after the grace period for tourist and visit visas. For residency visa overstay, the fine is AED 100 per day after the grace period.",
+        "how_to_pay": [
+          "Pay fines online via the ICP Smart Services portal (smartservices.icp.gov.ae)",
+          "Pay at ICP Customer Happiness Centres or GDRFA Dubai offices",
+          "Pay at Amer service centres in Dubai",
+          "Fines are collected at the airport upon departure if not paid earlier"
+        ],
+        "how_to_regularize": [
+          "Depart the UAE and pay outstanding fines at the airport",
+          "Apply for a visa extension or change of status through ICP or GDRFA if eligible",
+          "Apply for an out-of-country visa if you wish to re-enter",
+          "If you are a resident, your employer or sponsor may apply for a status change"
+        ],
+        "consequences": "Overstaying can result in daily fines, deportation, and a re-entry ban ranging from 1 year to permanent ban depending on the length and severity of the overstay.",
+        "amnesty_info": "The UAE government periodically announces visa amnesty programmes allowing overstayers to regularize their status or depart without paying full fines. Check official UAE government channels for current amnesty programmes."
+      }
+    },
+    "fetched_at": 1723100000
+  },
+  "extract:https://u.ae/en/information-and-services/visa-and-emirates-id/Types-of-visas/residence-visa-for-family-members": {
+    "data": {
+      "status": "ok",
+      "url": "https://u.ae/en/information-and-services/visa-and-emirates-id/Types-of-visas/residence-visa-for-family-members",
+      "data": {
+        "topic": "UAE Family Sponsorship Visa",
+        "who_can_sponsor": "UAE residents holding a valid residency visa can sponsor their immediate family members. UAE citizens can sponsor family members without a salary requirement.",
+        "minimum_salary_aed": "AED 4,000 per month (or AED 3,000 + accommodation provided by employer) for sponsoring a spouse and children. AED 20,000 per month to sponsor parents.",
+        "eligible_family_members": [
+          "Spouse (husband or wife)",
+          "Children (sons up to 18 years old, or up to 21 if enrolled in university; daughters of any age if unmarried)",
+          "Parents (subject to higher salary threshold of AED 20,000/month)",
+          "Special needs dependents regardless of age"
+        ],
+        "required_documents": [
+          "Sponsor's valid passport and Emirates ID",
+          "Sponsor's valid UAE residence visa",
+          "Salary certificate or employment contract showing monthly income",
+          "Tenancy contract (Ejari) or accommodation letter from employer",
+          "Family member's valid passport",
+          "Marriage certificate (for spouse, attested by UAE Ministry of Foreign Affairs)",
+          "Birth certificates for children (attested)",
+          "Medical fitness certificate for family members above 18 years"
+        ],
+        "application_steps": [
+          "Apply through ICP Smart Services portal or GDRFA Dubai portal",
+          "Submit all required attested documents",
+          "Pay applicable visa fees",
+          "Family member enters UAE on entry permit",
+          "Complete medical fitness test and Emirates ID biometric registration inside UAE",
+          "Receive residency visa stamped in passport"
+        ],
+        "validity": "Typically 2 years for family residency visas, renewable. Golden Visa holders can sponsor family for 10 years.",
+        "fees_aed": "Entry permit: approximately AED 500-1,000. Residency stamping fees vary. Emirates ID fee of AED 100 per year applies additionally."
+      }
+    },
+    "fetched_at": 1723100000
+  },
+  "extract:https://u.ae/en/information-and-services/visa-and-emirates-id/Types-of-visas/the-green-visa": {
+    "data": {
+      "status": "ok",
+      "url": "https://u.ae/en/information-and-services/visa-and-emirates-id/Types-of-visas/the-green-visa",
+      "data": {
+        "topic": "UAE Green Visa",
+        "what_is_green_visa": "The UAE Green Visa is a 5-year self-sponsored residence visa that does not require an employer sponsor. It targets skilled workers, freelancers, investors, and outstanding students who want to live and work in the UAE independently.",
+        "eligibility_categories": [
+          {
+            "category": "Skilled Employees",
+            "requirements": "Must hold a valid employment contract in a job classified as skill level 1, 2, or 3; minimum monthly salary of AED 15,000; bachelor's degree or equivalent."
+          },
+          {
+            "category": "Freelancers / Self-Employed",
+            "requirements": "Must have a valid freelance permit from Ministry of Human Resources or a free zone authority; proof of annual income of at least AED 360,000 in the previous two years, or sufficient financial solvency."
+          },
+          {
+            "category": "Investors",
+            "requirements": "Must have a valid investment or business activity in the UAE; financial solvency proof required."
+          },
+          {
+            "category": "Outstanding Students",
+            "requirements": "Top graduates from UAE universities with GPA of 3.5 or higher; or ranked in top 5% of graduating class."
+          }
+        ],
+        "key_benefits": [
+          "Self-sponsorship \u2014 no employer required to maintain visa",
+          "5-year validity (renewable)",
+          "Can sponsor family members without minimum salary threshold applied to traditional residency",
+          "Grace period of 6 months inside UAE after leaving a job to find new employment",
+          "Access to all UAE government services"
+        ],
+        "validity": "5 years, renewable",
+        "how_to_apply": "Apply through the ICP Smart Services portal (smartservices.icp.gov.ae), GDRFA Dubai portal, or Amer service centres in Dubai. Freelancers must obtain a freelance permit first from Ministry of Human Resources or a free zone."
+      }
+    },
+    "fetched_at": 1723100000
+  },
+  "extract:https://u.ae/en/information-and-services/visa-and-emirates-id/Types-of-visas/retirement-visa": {
+    "data": {
+      "status": "ok",
+      "url": "https://u.ae/en/information-and-services/visa-and-emirates-id/Types-of-visas/retirement-visa",
+      "data": {
+        "topic": "UAE Retirement Visa",
+        "minimum_age": "55 years old",
+        "financial_requirements": [
+          "Option 1: Own a property in the UAE worth at least AED 2,000,000",
+          "Option 2: Have financial savings of at least AED 1,000,000 in a UAE bank account",
+          "Option 3: Have a monthly income of at least AED 20,000 (from pension or any source)"
+        ],
+        "required_documents": [
+          "Valid passport",
+          "Proof of age (minimum 55 years)",
+          "Proof meeting one of the three financial requirements (title deed, bank statement, income certificate)",
+          "Valid health insurance covering the UAE",
+          "Medical fitness certificate"
+        ],
+        "validity": "5 years, renewable",
+        "how_to_apply": "Apply through the General Directorate of Residency and Foreigners Affairs (GDRFA) in the emirate where you reside, or via the ICP Smart Services portal. Health insurance is mandatory for approval."
+      }
+    },
+    "fetched_at": 1723100000
+  },
+  "extract:uae-fines-complete": {
+    "data": {
+      "status": "ok",
+      "data": {
+        "topic": "UAE Visa and Immigration Fines",
+        "categories": [
+          {
+            "category": "Overstay Fines",
+            "fines": [
+              {
+                "violation": "Tourist / Visit Visa Overstay (after grace period)",
+                "fine_aed": "AED 50 per day",
+                "grace_period": "10 days after visa expiry",
+                "notes": "Fines accumulate daily. Paid at airport, ICP portal, or GDRFA offices."
+              },
+              {
+                "violation": "Residency Visa Overstay (after grace period)",
+                "fine_aed": "AED 100 per day",
+                "grace_period": "10 days after visa expiry",
+                "notes": "Sponsors can also be fined if they fail to cancel the visa of an employee who left."
+              },
+              {
+                "violation": "Maximum overstay fine cap",
+                "fine_aed": "No official cap \u2014 fines keep accumulating",
+                "notes": "Severe cases may result in deportation and re-entry ban (1 year to permanent)."
+              }
+            ]
+          },
+          {
+            "category": "Emirates ID Fines",
+            "fines": [
+              {
+                "violation": "Late Emirates ID renewal (after expiry)",
+                "fine_aed": "AED 20 per day",
+                "maximum_fine": "AED 1,000",
+                "notes": "Fine applies from the day after the ID expires. Renewable online via ICP portal."
+              },
+              {
+                "violation": "Failure to apply for Emirates ID within 30 days of entry / change of status",
+                "fine_aed": "AED 20 per day",
+                "notes": "Applies to new residents who delay Emirates ID registration."
+              }
+            ]
+          },
+          {
+            "category": "Visa Violation Fines (Employer / Sponsor Liability)",
+            "fines": [
+              {
+                "violation": "Employing a worker without a valid work permit",
+                "fine_aed": "AED 50,000 per illegal worker",
+                "notes": "Employer faces fine plus possible criminal prosecution and business closure."
+              },
+              {
+                "violation": "Failure to cancel residency visa of departed employee within 30 days",
+                "fine_aed": "AED 500 to AED 5,000",
+                "notes": "Sponsor is responsible for cancelling visa once employee leaves UAE permanently."
+              },
+              {
+                "violation": "Absconding worker (employee leaves sponsor without official transfer or cancellation)",
+                "fine_aed": "No direct fine to worker, but a labour ban and travel ban may be imposed",
+                "notes": "Sponsor may file absconding report. Worker faces employment ban in the UAE."
+              },
+              {
+                "violation": "Visa transfer without proper procedures (changing employer without NOC)",
+                "fine_aed": "AED 2,000 to AED 10,000",
+                "notes": "Applies to cases where employment transfer rules are violated."
+              }
+            ]
+          },
+          {
+            "category": "Travel Document & Entry Fines",
+            "fines": [
+              {
+                "violation": "Entering UAE without a valid visa (visa on arrival not applicable for nationality)",
+                "fine_aed": "Deportation and possible ban",
+                "notes": "Entry is refused at port of entry. Airlines can be fined for carrying undocumented passengers."
+              },
+              {
+                "violation": "Using forged or fraudulent documents for visa application",
+                "fine_aed": "Criminal prosecution \u2014 imprisonment and deportation",
+                "notes": "Serious criminal offense under UAE law."
+              },
+              {
+                "violation": "Re-entering UAE during active ban",
+                "fine_aed": "Criminal prosecution and immediate deportation",
+                "notes": "Attempting to re-enter under a travel ban leads to arrest at the border."
+              }
+            ]
+          },
+          {
+            "category": "Visa Extension & Status Change Fines",
+            "fines": [
+              {
+                "violation": "Applying for visa extension after expiry (tourist/visit visa)",
+                "fine_aed": "AED 200 to AED 500 depending on emirate and type",
+                "notes": "Extension must be applied before visa expires. Late applications incur additional fees."
+              },
+              {
+                "violation": "Change of status inside UAE without proper approval",
+                "fine_aed": "AED 500 to AED 2,000",
+                "notes": "Changing from visit visa to residency or vice versa without following procedures."
+              }
+            ]
+          },
+          {
+            "category": "How to Pay Fines",
+            "channels": [
+              "ICP Smart Services portal: smartservices.icp.gov.ae",
+              "GDRFA Dubai website: gdrfad.gov.ae",
+              "Amer service centres in Dubai",
+              "ICP Customer Happiness Centres in all emirates",
+              "Airport immigration counters (fines collected upon departure)",
+              "Dubai Police website (for traffic-related overstay enforcement)"
+            ]
+          }
+        ],
+        "important_note": "Fines are subject to change by UAE authorities. Always verify current amounts with official ICP or GDRFA portals before taking action.",
+        "amnesty_programmes": "The UAE government periodically announces amnesty periods where overstayers and violators can regularize their status with reduced or waived fines. Follow official UAE government channels for announcements."
+      }
+    },
+    "fetched_at": 1723100000
+  },
+  "extract:uae-visa-on-arrival": {
+    "data": {
+      "status": "ok",
+      "data": {
+        "topic": "UAE Visa on Arrival",
+        "direct_answer": "Citizens of certain nationalities are eligible for a visa on arrival at UAE airports, valid for 30 days and extendable once for another 30 days. Other nationalities may receive a free visa on arrival for 90 days.",
+        "visa_free_90_days": [
+          "All EU member state passport holders",
+          "United Kingdom",
+          "United States of America",
+          "Canada",
+          "Australia",
+          "New Zealand",
+          "Japan",
+          "South Korea",
+          "Singapore",
+          "Brunei",
+          "Hong Kong (SAR)"
+        ],
+        "visa_on_arrival_30_days": [
+          "India (certain categories \u2014 see note below)",
+          "China",
+          "Kazakhstan",
+          "Georgia",
+          "Armenia",
+          "Ukraine",
+          "Belarus",
+          "Moldova",
+          "Russia"
+        ],
+        "india_special_note": "Indian passport holders with a valid US visa, UK visa, or EU Schengen visa are eligible for a UAE visa on arrival for 14 days. Indian citizens with UAE residency visa history may also qualify. Otherwise, Indians must apply for a pre-arranged tourist visa through a UAE airline, travel agent, or hotel.",
+        "gcc_nationals": "Citizens of GCC countries (Saudi Arabia, Kuwait, Bahrain, Oman, Qatar) can enter UAE without a visa and stay indefinitely as long as they hold a valid GCC passport or national ID.",
+        "eligibility_criteria": [
+          "Hold a valid passport with at least 6 months validity",
+          "Have a return or onward flight ticket",
+          "Have sufficient funds for the stay",
+          "Have a confirmed hotel booking or host address"
+        ],
+        "fees_or_validity": "30 days (extendable once for 30 days). Visa on arrival is free for most eligible nationalities.",
+        "application_steps": [
+          "Present passport at UAE airport immigration counter upon arrival",
+          "Visa on arrival stamp is granted at the immigration desk",
+          "No prior application needed for eligible nationalities"
+        ]
+      }
+    },
+    "fetched_at": 1723100000
+  },
+  "extract:uae-transit-visa": {
+    "data": {
+      "status": "ok",
+      "data": {
+        "topic": "UAE Transit Visa",
+        "direct_answer": "The UAE offers transit visas for passengers who have a layover at UAE airports and wish to leave the airport and explore the city. Dubai International Airport is the main hub.",
+        "transit_visa_types": [
+          {
+            "type": "48-Hour Transit Visa",
+            "duration": "48 hours",
+            "fee_aed": "Free of charge (issued by Emirates Airlines or at Dubai airport for eligible passengers)",
+            "notes": "Allows passengers to leave the airport and explore Dubai for up to 48 hours during a layover."
+          },
+          {
+            "type": "96-Hour Transit Visa",
+            "duration": "96 hours (4 days)",
+            "fee_aed": "Approximately AED 50 (varies by issuing authority)",
+            "notes": "Extended transit visa for passengers with longer layovers. Must be applied through a UAE airline or hotel sponsor."
+          }
+        ],
+        "who_needs_transit_visa": "Nationalities that do not qualify for visa on arrival or visa-free entry need a transit visa if they wish to exit the airport during their layover.",
+        "eligibility_criteria": [
+          "Must have a confirmed onward flight within the transit duration",
+          "Must hold a valid passport with at least 6 months validity",
+          "Transit visa does not allow working in the UAE"
+        ],
+        "how_to_apply": "Apply through Emirates, flydubai, Air Arabia, or other UAE-based airlines at the time of booking. Some hotels in Dubai also sponsor transit visas. Can also be obtained at Dubai airport immigration on arrival for eligible passengers.",
+        "airport_transit_no_visa": "Many nationalities can transit through UAE airports (airside only, without clearing immigration) without any visa for up to 24 hours."
+      }
+    },
+    "fetched_at": 1723100000
+  },
+  "extract:uae-domestic-worker-visa": {
+    "data": {
+      "status": "ok",
+      "data": {
+        "topic": "UAE Domestic Worker / Maid / Driver Visa",
+        "direct_answer": "UAE residents can sponsor domestic workers such as housemaids, drivers, cooks, babysitters, and gardeners under a domestic worker visa regulated by the Ministry of Human Resources and Emiratisation (MOHRE).",
+        "who_can_sponsor": "UAE residents or citizens with a valid residency visa and sufficient income. Sponsors must meet minimum salary and accommodation requirements.",
+        "minimum_salary_to_sponsor": "AED 6,000 per month for a single worker. Higher if sponsoring multiple workers.",
+        "eligible_worker_roles": [
+          "Housemaid",
+          "Driver",
+          "Cook",
+          "Babysitter or childcare worker",
+          "Gardener",
+          "Security guard (residential)",
+          "Home nurse (requires medical qualification)"
+        ],
+        "required_documents": [
+          "Sponsor's valid passport and Emirates ID",
+          "Sponsor's valid UAE residency visa",
+          "Salary certificate showing minimum AED 6,000/month",
+          "Tenancy contract (Ejari) or villa ownership proof",
+          "Domestic worker's passport (valid 6+ months)",
+          "Domestic worker contract signed by both parties (via MOHRE Tadbeer portal)",
+          "Medical fitness certificate for the worker",
+          "Emirates ID application for the worker"
+        ],
+        "application_steps": [
+          "Register as employer on the MOHRE Tadbeer portal (tadbeer.mohre.gov.ae)",
+          "Submit employer eligibility documents",
+          "Select and contract the domestic worker through a licensed Tadbeer centre or directly",
+          "Pay recruitment and visa fees",
+          "Worker enters UAE on a domestic worker visa",
+          "Complete medical fitness test and Emirates ID registration"
+        ],
+        "worker_rights": "Domestic workers in UAE are protected under Federal Law No. 10 of 2017. They are entitled to: 8 hours daily rest, 1 day off per week, 30 days annual leave, medical care, and end-of-service gratuity of 1 month per year of service.",
+        "fees_or_validity": "Domestic worker visa is typically valid for 2 years, renewable. Visa fees range from AED 5,000 to AED 15,000+ depending on nationality and whether recruited locally or from abroad."
+      }
+    },
+    "fetched_at": 1723100000
+  },
+  "extract:uae-health-insurance": {
+    "data": {
+      "status": "ok",
+      "data": {
+        "topic": "UAE Mandatory Health Insurance",
+        "direct_answer": "Health insurance is mandatory for all residents in Dubai and Abu Dhabi. In Dubai, employers are legally required to provide health insurance for all employees and their dependents.",
+        "dubai_rules": "Under Dubai Health Authority (DHA) regulations, all employers must provide health insurance to employees and their families. Failure to provide insurance results in fines and inability to process visa renewals.",
+        "abu_dhabi_rules": "Abu Dhabi mandates health insurance for all visa holders including dependents. Uninsured residents cannot renew or obtain residency visas. The minimum plan is the Thiqa Basic Plan for low-income workers.",
+        "other_emirates": "Health insurance is not yet legally mandatory in Sharjah, Ajman, Ras Al Khaimah, Fujairah, and Umm Al Quwain, but it is strongly recommended and required for visa processing in many cases.",
+        "employer_obligation": [
+          "Employers with 1,000+ employees: must insure from January 2016",
+          "Employers with 100-999 employees: must insure from July 2016",
+          "Employers with fewer than 100 employees: must insure from January 2017",
+          "Self-sponsored (Green Visa, Golden Visa): must arrange own health insurance"
+        ],
+        "minimum_coverage": "The Essential Benefits Plan (EBP) covers inpatient and outpatient care up to AED 150,000 per year. Premiums start from AED 500-700 per year for basic plans.",
+        "fine_for_non_compliance": "AED 500 per month per uninsured employee in Dubai. Visa renewals will be blocked until insurance is provided.",
+        "how_to_obtain": "Purchase from any DHA-approved or DOH-approved insurance provider. Employers typically arrange group plans. Self-sponsored residents can buy individual plans online from insurers like Daman, AXA, MetLife, or Oman Insurance."
+      }
+    },
+    "fetched_at": 1723100000
+  },
+  "extract:uae-visa-renewal": {
+    "data": {
+      "status": "ok",
+      "data": {
+        "topic": "UAE Residency Visa Renewal",
+        "direct_answer": "UAE residency visas must be renewed before they expire. The renewal process involves a medical fitness test, blood test, and Emirates ID update. Renewals can be done through the ICP Smart Services portal or GDRFA offices.",
+        "when_to_renew": "You can start the renewal process up to 6 months before the visa expires. Do not wait until after expiry \u2014 daily fines of AED 100 apply.",
+        "required_documents": [
+          "Valid passport (6+ months remaining validity)",
+          "Current Emirates ID",
+          "Passport-size photograph (white background)",
+          "Current residency visa (the one being renewed)",
+          "Medical fitness certificate (for applicants 18+)",
+          "Blood test report from a DHA/DOH-approved centre",
+          "Sponsor's documents: Emirates ID, valid residency visa (if sponsored)",
+          "Employment contract or salary certificate (for employment visa renewal)",
+          "Valid health insurance certificate"
+        ],
+        "medical_test_process": [
+          "Visit a DHA/DOH-approved medical fitness centre (in your emirate)",
+          "Blood test for HIV and Hepatitis B/C \u2014 mandatory for all residents 18+",
+          "Chest X-ray for tuberculosis screening",
+          "Eye test and photograph taken at the centre",
+          "Results available within 1-3 working days",
+          "Medical fitness certificate issued upon passing"
+        ],
+        "application_steps": [
+          "Complete medical fitness test and blood test",
+          "Apply for visa renewal through ICP Smart Services portal (smartservices.icp.gov.ae) or GDRFA Dubai",
+          "For employment visa: employer or PRO submits renewal on your behalf",
+          "Pay renewal fees",
+          "Receive entry permit (if outside UAE) or status change (if inside UAE)",
+          "Update Emirates ID at ICP centre"
+        ],
+        "fees_or_validity": "Residency visa renewal fee: approximately AED 500-1,500 depending on visa type and duration. Emirates ID renewal: AED 100/year. Medical test: AED 250-500.",
+        "visa_validity_options": "2-year or 3-year renewal depending on employer or visa type. Golden Visa and Green Visa are renewed for 10 or 5 years respectively."
+      }
+    },
+    "fetched_at": 1723100000
+  },
+  "extract:uae-labour-employment-law": {
+    "data": {
+      "status": "ok",
+      "data": {
+        "topic": "UAE Labour and Employment Law",
+        "direct_answer": "UAE employment law is governed by Federal Decree-Law No. 33 of 2021 (the new Labour Law effective 2 February 2022). It covers employment contracts, working hours, leave entitlements, end-of-service gratuity, notice periods, and termination rights.",
+        "contract_types": [
+          "Fixed-term contracts (maximum 3 years, renewable)",
+          "All employment contracts are now fixed-term under the 2022 law"
+        ],
+        "working_hours": "Maximum 8 hours per day / 48 hours per week. During Ramadan, reduced to 6 hours per day for Muslim employees. Overtime is paid at 125% of basic wage (150% for work on rest days or public holidays).",
+        "leave_entitlements": [
+          "Annual Leave: 30 calendar days per year (after completing 1 year). 2 days/month for the first year if less than 1 year completed.",
+          "Sick Leave: Up to 90 days per year \u2014 first 15 days full pay, next 30 days half pay, remaining 45 days unpaid.",
+          "Maternity Leave: 60 days \u2014 first 45 days full pay, next 15 days half pay. Additional 45 days unpaid for illness.",
+          "Paternity Leave: 5 days paid leave within the first 6 months of the child's birth.",
+          "Public Holidays: As announced by the UAE government each year.",
+          "Study Leave: Up to 10 days per year for employees studying in UAE-accredited institutions."
+        ],
+        "end_of_service_gratuity": "21 days basic wage for each of the first 5 years, then 30 days basic wage for each subsequent year. Maximum gratuity is 2 years' total wage. Applies to employees completing at least 1 year of service.",
+        "notice_period": "Minimum 30 days notice required by either party for termination. Maximum notice period is 90 days. Notice period must be specified in the employment contract.",
+        "termination_rules": "Employer may terminate with notice for performance or operational reasons. Arbitrary dismissal entitles employee to 3 months compensation. Employee may resign without notice if employer violates contract terms.",
+        "mohre_complaint": "Employees can file labour complaints through the Ministry of Human Resources and Emiratisation (MOHRE) app or call centre (800 60). Disputes not resolved within 14 days are referred to UAE Labour Court.",
+        "non_compete_clause": "Non-compete clauses are enforceable for up to 2 years after resignation if agreed in writing, restricted to same geographic area and job function."
+      }
+    },
+    "fetched_at": 1723100000
+  },
+  "extract:uae-freezone-business-visa": {
+    "data": {
+      "status": "ok",
+      "data": {
+        "topic": "UAE Free Zone Business Setup and Visa",
+        "direct_answer": "UAE free zones allow 100% foreign ownership without a local sponsor. Each free zone issues its own trade licence and visa quota. Popular free zones include DMCC, DIFC, ADGM, Sharjah Media City (Shams), and Ajman Free Zone.",
+        "freezone_vs_mainland": [
+          "Free Zone: 100% foreign ownership, tax-free, cannot trade directly with UAE mainland (needs distributor), cheaper setup costs",
+          "Mainland: Requires local service agent (for professional licences) or previously 51% local partner (now waived for most activities), can trade freely in UAE market"
+        ],
+        "popular_freezones": [
+          "DMCC (Dubai Multi Commodities Centre) \u2014 commodities, trading, consultancy",
+          "DIFC (Dubai International Financial Centre) \u2014 finance and legal services",
+          "Dubai Internet City / Dubai Media City \u2014 tech and media",
+          "Shams (Sharjah Media City) \u2014 cheapest, popular for freelancers and consultants from AED 5,750/year",
+          "Ajman Free Zone \u2014 manufacturing, trading, services from AED 6,500/year",
+          "RAKEZ (Ras Al Khaimah Economic Zone) \u2014 cost-effective for manufacturing and services",
+          "ADGM (Abu Dhabi Global Market) \u2014 financial and professional services"
+        ],
+        "visa_quota": "Each free zone licence comes with a visa quota: typically 1-6 visas for office/flexi-desk licences, more for warehouses or larger office spaces.",
+        "setup_costs": "Starting from AED 5,750/year for Shams flexi-desk packages (includes licence + 1 visa). Most free zones range AED 10,000 to AED 30,000/year for standard packages.",
+        "application_steps": [
+          "Choose the free zone and business activity",
+          "Submit trade name reservation and business activity approval",
+          "Submit shareholder documents (passport copies, business plan if required)",
+          "Pay licence and establishment fees",
+          "Receive trade licence within 3-7 working days",
+          "Apply for investor/partner visa under the licence",
+          "Complete medical fitness test and Emirates ID registration"
+        ],
+        "investor_visa_benefits": "Free zone licence holders can apply for a 3-year renewable investor/partner residence visa and can sponsor family members.",
+        "freelance_permit": "Many free zones offer freelance permits (personal activity licences) for AED 7,500-15,000/year, suitable for individuals working independently without forming a company."
+      }
+    },
+    "fetched_at": 1723100000
+  },
+  "extract:uae-driving-licence": {
+    "data": {
+      "status": "ok",
+      "data": {
+        "topic": "UAE Driving Licence Transfer / Conversion",
+        "direct_answer": "Residents from certain countries can transfer (convert) their foreign driving licence to a UAE driving licence without taking driving tests. Others must complete a full driving course.",
+        "direct_transfer_countries": [
+          "All EU member states",
+          "United Kingdom",
+          "United States",
+          "Canada",
+          "Australia",
+          "New Zealand",
+          "South Africa",
+          "Turkey",
+          "Japan",
+          "South Korea",
+          "Singapore",
+          "All GCC countries (Saudi Arabia, Kuwait, Bahrain, Oman, Qatar)"
+        ],
+        "direct_transfer_process": [
+          "Visit the Roads and Transport Authority (RTA) in Dubai, or equivalent authority in your emirate",
+          "Submit original foreign driving licence (valid and not expired)",
+          "Submit passport, UAE visa, Emirates ID",
+          "Pay conversion fee",
+          "Eye test at the RTA centre",
+          "UAE driving licence issued \u2014 no tests required for eligible nationalities"
+        ],
+        "full_course_required": "Nationals from countries NOT on the direct transfer list must complete a full UAE driving course: theory test, parking test, road test. Typically takes 15-40 lessons, costing AED 3,000 to AED 6,000+.",
+        "fees_conversion": "Conversion fee: approximately AED 200-400 at RTA (Dubai). Fees vary by emirate.",
+        "validity": "UAE driving licence is valid for 10 years for residents, renewable. Seniors above 65 years need annual medical clearance.",
+        "important_note": "Your foreign licence must be translated to Arabic by a certified legal translator if it is not in English or Arabic. International Driving Permits (IDP) alone are NOT accepted for permanent residence \u2014 you must convert to a UAE licence within 6 months of becoming a resident."
+      }
+    },
+    "fetched_at": 1723100000
+  },
+  "extract:uae-medical-test-visa": {
+    "data": {
+      "status": "ok",
+      "data": {
+        "topic": "UAE Medical Fitness Test for Visa",
+        "direct_answer": "All residents aged 18 and above must pass a medical fitness test as part of the visa and residency process. This includes a blood test and chest X-ray. Certain medical conditions may result in visa rejection.",
+        "tests_required": [
+          "Blood test: HIV (required for all), Hepatitis B and C screening",
+          "Chest X-ray: tuberculosis (TB) screening",
+          "Eye test: vision check",
+          "General physical examination"
+        ],
+        "where_to_do_it": [
+          "Government-approved medical fitness centres in each emirate",
+          "Dubai: ASTER, Prime Medical Centre, Dubai Health Authority (DHA) approved centres",
+          "Abu Dhabi: HAAD-approved health centres",
+          "Sharjah/Other Emirates: MOH-approved centres",
+          "Some typing offices have affiliated medical centres"
+        ],
+        "process": [
+          "Book an appointment online or walk in to an approved centre",
+          "Bring passport, Emirates ID (or application receipt), passport photo",
+          "Complete blood draw and chest X-ray on the same visit",
+          "Results available in 1-3 working days",
+          "Medical fitness certificate issued upon passing"
+        ],
+        "cost": "AED 250 to AED 500 depending on the centre and emirate.",
+        "conditions_that_may_cause_rejection": [
+          "Active tuberculosis (TB)",
+          "HIV positive status",
+          "Active Hepatitis B or C (in some cases)",
+          "Certain serious infectious diseases as determined by health authority"
+        ],
+        "validity": "Medical fitness certificate is valid for 3 months from the date of issue. If your visa process takes longer, you may need to redo the test.",
+        "pregnancy_note": "Pregnant women are typically exempted from the chest X-ray. Inform the medical staff at the time of the test."
+      }
+    },
+    "fetched_at": 1723100000
+  },
+  "extract:uae-noc-letter": {
+    "data": {
+      "status": "ok",
+      "data": {
+        "topic": "UAE NOC (No Objection Certificate)",
+        "direct_answer": "A No Objection Certificate (NOC) is a letter from your employer or sponsor in the UAE stating they have no objection to you taking a specific action, such as changing jobs, applying for another visa, or starting a business.",
+        "when_noc_is_needed": [
+          "Changing employer or job within the UAE (employer-to-employer transfer)",
+          "Starting a business or getting a second trade licence while employed",
+          "Applying for a freelance permit while on an employment visa",
+          "Applying for a higher education course that requires proof of employer approval",
+          "Spouse applying for own employment visa while on a family visa",
+          "Government transactions requiring employer consent"
+        ],
+        "noc_for_job_change": "Under the new 2022 Labour Law, you generally do NOT need an NOC to switch jobs after completing 6 months with your current employer. The employer cannot prevent you from leaving after giving proper notice. However, some free zones and specific contracts still require NOC procedures.",
+        "how_to_obtain_noc": [
+          "Request the NOC letter from your employer's HR department",
+          "The letter should be on company letterhead, signed and stamped",
+          "Include: employee name, passport number, visa number, statement of no objection",
+          "Some free zones require NOC to be attested by the free zone authority",
+          "For mainland companies, NOC may need attestation at MOHRE"
+        ],
+        "noc_format": "No standard government template \u2014 the employer writes it on official letterhead. Some institutions provide their own template. The letter should clearly state the employee's details and the specific purpose of the NOC.",
+        "noc_validity": "Typically valid for 3 to 6 months from the date of issue, depending on the institution requesting it.",
+        "alternative_if_employer_refuses": "If your employer refuses to provide an NOC, you can file a complaint with MOHRE (Ministry of Human Resources). Under the 2022 Labour Law, withholding an NOC unreasonably can be challenged legally."
+      }
+    },
+    "fetched_at": 1723100000
+  },
+  "extract:uae-visa-types-summary": {
+    "data": {
+      "status": "ok",
+      "data": {
+        "topic": "All UAE Visa Types Summary",
+        "direct_answer": "The UAE offers a wide range of visa categories for tourists, residents, investors, students, workers, retirees, and families. Each has specific eligibility, duration, and application channels.",
+        "visa_types": [
+          {
+            "name": "Tourist Visa",
+            "duration": "30 or 60 days, extendable",
+            "best_for": "Visitors coming for holiday, tourism, or short-term stay",
+            "apply_via": "UAE airlines, travel agents, hotels, or ICP online portal"
+          },
+          {
+            "name": "Visa on Arrival",
+            "duration": "30 days (some nationalities 90 days free)",
+            "best_for": "Eligible nationalities visiting short-term",
+            "apply_via": "Automatically at UAE airport immigration"
+          },
+          {
+            "name": "Transit Visa",
+            "duration": "48 or 96 hours",
+            "best_for": "Layover passengers who want to exit the airport",
+            "apply_via": "UAE-based airlines or airport immigration"
+          },
+          {
+            "name": "Employment / Work Visa",
+            "duration": "2 years (renewable)",
+            "best_for": "People working for a UAE company",
+            "apply_via": "Employer / company PRO through MOHRE and ICP"
+          },
+          {
+            "name": "Green Visa",
+            "duration": "5 years (self-sponsored)",
+            "best_for": "Skilled workers, freelancers, investors, outstanding graduates",
+            "apply_via": "ICP Smart Services or GDRFA"
+          },
+          {
+            "name": "Golden Visa",
+            "duration": "10 years (self-sponsored)",
+            "best_for": "Investors, exceptional talents, doctors, scientists, top students",
+            "apply_via": "ICP Smart Services or GDRFA"
+          },
+          {
+            "name": "Student Visa",
+            "duration": "Duration of study",
+            "best_for": "Students enrolled in UAE-accredited universities",
+            "apply_via": "Through the university directly"
+          },
+          {
+            "name": "Family Sponsorship Visa",
+            "duration": "2 years (renewable)",
+            "best_for": "Dependents of UAE residents (spouse, children, parents)",
+            "apply_via": "ICP Smart Services or GDRFA"
+          },
+          {
+            "name": "Retirement Visa",
+            "duration": "5 years (renewable)",
+            "best_for": "Retirees aged 55+ meeting financial requirements",
+            "apply_via": "GDRFA or ICP Smart Services"
+          },
+          {
+            "name": "Free Zone Investor Visa",
+            "duration": "3 years (renewable)",
+            "best_for": "Business owners with a free zone trade licence",
+            "apply_via": "Through the free zone authority"
+          },
+          {
+            "name": "Domestic Worker Visa",
+            "duration": "2 years (renewable)",
+            "best_for": "Housemaids, drivers, cooks sponsored by UAE residents",
+            "apply_via": "MOHRE Tadbeer platform"
+          }
+        ]
+      }
+    },
+    "fetched_at": 1723100000
+  },
+  "nationality:pakistani": {
+    "data": {
+      "status": "ok",
+      "url": "https://u.ae/en/information-and-services/visa-and-emirates-id/Types-of-visas/tourist-visa",
+      "data": {
+        "topic": "Tourist visa for Indian citizens",
+        "direct_answer": "Indian nationals who are not eligible for visa on arrival or visa-free entry must apply for a tourist visa through a UAE-based airline, a licensed travel agent, or a hotel. You can also apply online via the Federal Authority for Identity, Citizenship, Customs and Port Security (ICP) or GDRFA Dubai.",
+        "eligibility_criteria": [
+          "Sponsorship via airline, licensed travel agent, or hotel, or directly via ICP/GDRFA online portals",
+          "For 5-year multiple-entry tourist visa: bank balance of 4,000 USD or equivalent in the last 6 months",
+          "Valid health insurance applicable in the UAE for at least 180 days"
+        ],
+        "application_steps": [
+          "Choose channel: UAE-based airline, licensed travel agent, hotel, ICP smart services portal, or GDRFA Dubai portal",
+          "Submit passport copy, return flight ticket, and hotel booking",
+          "Receive electronic tourist visa via email"
+        ],
+        "fees_or_validity": "5-year multiple entry visa (90 days per visit) or 30/60-day single/multiple entry tourist visa"
+      }
+    },
+    "fetched_at": 1786184115.4479902
+  },
+  "nationality:filipino": {
+    "data": {
+      "status": "ok",
+      "url": "https://u.ae/en/information-and-services/visa-and-emirates-id/Types-of-visas/tourist-visa",
+      "data": {
+        "topic": "Tourist visa for Indian citizens",
+        "direct_answer": "Indian nationals who are not eligible for visa on arrival or visa-free entry must apply for a tourist visa through a UAE-based airline, a licensed travel agent, or a hotel. You can also apply online via the Federal Authority for Identity, Citizenship, Customs and Port Security (ICP) or GDRFA Dubai.",
+        "eligibility_criteria": [
+          "Sponsorship via airline, licensed travel agent, or hotel, or directly via ICP/GDRFA online portals",
+          "For 5-year multiple-entry tourist visa: bank balance of 4,000 USD or equivalent in the last 6 months",
+          "Valid health insurance applicable in the UAE for at least 180 days"
+        ],
+        "application_steps": [
+          "Choose channel: UAE-based airline, licensed travel agent, hotel, ICP smart services portal, or GDRFA Dubai portal",
+          "Submit passport copy, return flight ticket, and hotel booking",
+          "Receive electronic tourist visa via email"
+        ],
+        "fees_or_validity": "5-year multiple entry visa (90 days per visit) or 30/60-day single/multiple entry tourist visa"
+      }
+    },
+    "fetched_at": 1786184119.139632
   }
 }
