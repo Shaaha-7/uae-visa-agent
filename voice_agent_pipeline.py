@@ -69,7 +69,7 @@ def process_single_turn(
     Query -> context.dev -> LLM Voice Summarizer -> ElevenLabs TTS -> Audio Playback.
     """
     print(f"\n============================================================")
-    print(f" 🗣️  USER QUESTION: \"{user_question}\"")
+    print(f" USER QUESTION: \"{user_question}\"")
     print(f"============================================================")
 
     # 1. Extract live facts via context.dev
@@ -112,7 +112,7 @@ def run_live_conversational_agent(record_seconds: int = 8):
     llm_summarizer = LLMVoiceSummarizer()
 
     print("============================================================")
-    print("   🎙️  LIVE CONVERSATIONAL UAE VISA VOICE AI")
+    print("   LIVE CONVERSATIONAL UAE VISA VOICE AI")
     print("   Continuous Voice Loop (Press Ctrl+C anytime to stop)")
     print("============================================================")
 
@@ -161,7 +161,7 @@ def run_text_interactive_agent():
     llm_summarizer = LLMVoiceSummarizer()
 
     print("============================================================")
-    print("   💬 INTERACTIVE UAE VISA VOICE AGENT (Text Mode)")
+    print("   INTERACTIVE UAE VISA VOICE AGENT (Text Mode)")
     print("   Type your questions continuously (Type 'exit' or 'quit' to stop)")
     print("============================================================")
 
